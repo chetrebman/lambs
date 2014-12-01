@@ -11,8 +11,7 @@ class Student_all extends CI_Controller {
 			return;
 		}
 		
-			//12-1-4
-			
+		//12-1-4
 		$statusSelect = "1";
 		$query = $this->db->get('status');
 		foreach ($query->result() as $row)
@@ -20,7 +19,7 @@ class Student_all extends CI_Controller {
 			$statusMap[ $row->id ] = $row->studentStatus;
 		}
 
-		//12/1/14
+		//12-1-14
 		$data[ 'statusMap' ]    = $statusMap;
 		$data[ 'statusSelect' ] = $statusSelect;
 		
