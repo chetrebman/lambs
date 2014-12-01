@@ -46,6 +46,11 @@ class Student_all extends CI_Controller {
 	}
 	
 		// 12-1-14
+	/**
+	 * This is called when a user changes the student status select list.
+	 * 
+	 * @param unknown $data
+	 */
 	function performPost( $data )
 	{
 		$statusSelect = $_POST[ 'status' ];
