@@ -6,16 +6,12 @@ $this->load->helper('url');
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 
 	<meta charset="utf-8">
 	<title>Daily Instructor Report</title>
-<link rel="stylesheet" href="<?php echo base_url()?>css/main.css">
-
-
-
-
-	</head>
+	<link rel="stylesheet" href="<?php echo base_url()?>css/main.css">
+</head>
 <body>
 
 <script type="text/javascript">
@@ -92,8 +88,10 @@ $(document).ready(setup_change);
          		echo '<td><input type="text" name="timeIn'.$studentIdMark.'" id="timeIn'.$studentIdMark.'" value="'.$existingTimeIn.'" maxlength="10" size="10" style="width:100%" /></td>';
          		echo '<td><input type="text" name="timeOut'.$studentIdMark.'" id="timeOut'.$studentIdMark.'" value="'.$existingTimeOut.'" maxlength="10" size="10" style="width:100%" /></td>';
          		echo '<td><input type="text" name="totalTime'.$studentIdMark.'" id="totalTime'.$studentIdMark.'" value="'.$existingTotalTime.'" maxlength="10" size="10" style="width:100%" /></td>';
-         	echo '<td>'.form_dropdown('courseAllowEmpty'.$studentIdMark,    $courses, $existingCourse ).'</td>'; 
-         	echo '<td><input type="text" name="classNumber'.$studentIdMark.'" id="classNumber'.$studentIdMark.'" value="'.$existingClassNumber.'" maxlength="10" size="10" style="width:100%" /></td>';
+         	
+         		echo '<td>'.form_dropdown('courseAllowEmpty'.$studentIdMark,    $courses, $existingCourse ).'</td>'; 
+         	
+         		echo '<td><input type="text" name="classNumber'.$studentIdMark.'" id="classNumber'.$studentIdMark.'" value="'.$existingClassNumber.'" maxlength="10" size="10" style="width:100%" /></td>';
          		  
          		
          		echo '</tr>';

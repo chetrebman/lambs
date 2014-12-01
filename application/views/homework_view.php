@@ -43,7 +43,7 @@ $this->load->helper('lambs');
          
          	echo '<td>'.form_dropdown("homeworkType_$i", $homeworkType, $existingHomeworkType ).'</td>'; 
          	echo "<td><input type=\"text\" name=\"homeworkNumber_$i\" id=\"homeworkNumber_$i\" value=\"$existingHomeworkNumber\" maxlength=\"10\" size=\"10\" style=\"width:100%\" /></td>";
-         	echo "<td><input type=\"text\" name=\"points_$i\" id=\"points_$i\" value=\"$existingPoints\" maxlength=\"3\" size=\"3\" style=\"width:100%\" /></td>";
+         	echo "<td><input type=\"text\" name=\"points_$i\" id=\"points_$i\" value=\"$existingPoints\" maxlength=\"5\" size=\"5\" style=\"width:100%\" /></td>";
          
          	echo "<input type=\"hidden\" name=\"studentId\" id=\"studentId\" value=\"$studentId\" />";
          	echo "<input type=\"hidden\" name=\"date\" id=\"date\" value=\"$date\" />";

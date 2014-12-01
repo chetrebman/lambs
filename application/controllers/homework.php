@@ -174,6 +174,10 @@ class Homework extends CI_Controller {
 		$homeworkType[ 'Written_Final'] = 'Written Final';
 		$homeworkType[ 'Practicum_Final'] = 'Practicum Final';
 		$homeworkType[ 'Project'] = 'Project';
+		// added the next 3 on 12-1-14 no other changes were needed
+ 		$homeworkType[ 'Lab'] = 'Lab';
+ 		$homeworkType[ 'Attendance'] = 'Attendance';
+ 		$homeworkType[ 'Exception'] = 'Exception';
 		
 		$data[ 'homeworkType' ] = $homeworkType;
 		

@@ -7,15 +7,40 @@ $this->load->helper('url');
 <html lang="en">
 <head>
 	<meta charset="utf-8">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+	
 	<title>All Lambs Students</title>
 <link rel="stylesheet" href="<?php echo base_url()?>css/main.css">
 	</head>
 <body>
 
+<script>
+	$(document).ready(setup_change);
+
+	function setup_change(){
+		$('#statusSelect').change(updateForm);
+	}
+
+	function updateForm(){	 
+		$('#statusForm').submit();
+	};
+	
+</script>
+
 <div id="container">
 	<h1>Lambs Student List</h1>
-    <?php $this->load->view('includes/header', "howdy" );	?>
+    <?php // 12-1-14
+    	$this->load->view('includes/header', "howdy" );	
+    ?>
 	<div id="body">
+
+	<?php 
+		$attributes = array( 'id' => 'statusForm');
+		echo form_open( base_url().'index.php/student_all', $attributes );
+		echo form_dropdown('status', $statusMap, $statusSelect, 'id="statusSelect" '  ).'&nbsp;'; 
+		echo form_close();
+	?>
+		
 	<table>
     <?php foreach ($students->result() as $row)
     {

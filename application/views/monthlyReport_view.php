@@ -108,10 +108,32 @@ $this->load->helper('url');
   
    <p> <br>Total Cost of Program: $<?php echo $totalProgramHours * $tuitionPerHour ?>
    <p> Total Payments To date: $<?php echo "$totalPayment"; ?>
-   <p> Payment Due: $<?php echo $totalHoursCompleted * $tuitionPerHour - $totalPayment?>
+   <?php if ( $totalPayment < ($totalProgramHours * $tuitionPerHour) )
+   { 
+   	  $paymentDue = ($totalHoursCompleted * $tuitionPerHour) - $totalPayment;
+      echo "<p> Payment Due: $".$paymentDue;
+   }
+   else {
+      echo "<p> Payment Due: $0 ";
+   } ?>
+   <?php if ( $totalPayment > ($totalProgramHours * $tuitionPerHour) )
+   { 
+   	  $credit = $totalPayment - ($totalProgramHours * $tuitionPerHour);
+      echo "<p> CREDIT: $".$credit;
+   }?>
    <p> Total Hours Completed: <?php  echo $totalHoursCompleted ?>
    <p> Tuition per Hour: $<?php echo "$tuitionPerHour" ?>
-   <p> Total Cost of completed Hours to Date: $<?php echo $totalHoursCompleted * $tuitionPerHour?>
+   
+   <?php { $totalCostOfProgram = $totalProgramHours * $tuitionPerHour; }?>
+   <?php if ( $totalPayment < $totalCostOfProgram )
+   { 
+   	  echo "<p> Total Cost of completed Hours to Date: $".($totalHoursCompleted * $tuitionPerHour);
+   }
+   else {
+      echo "<p> Total Cost of completed Hours to Date: $".$totalCostOfProgram;
+   } ?>
+   
+   
    <p> Total Program Hours: <?php echo $totalProgramHours?>
    <br><br>
    

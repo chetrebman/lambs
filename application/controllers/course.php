@@ -28,7 +28,7 @@ class Course extends CI_Controller {
 			}
 			$instuctorMap[ null ] = "Unknown";
 			
-			if ( $courseId == -1 ){  // this is an add new course
+			if ( $courseId == -1 ){  // this is to an add a new course
 				$newcourse['id'] = $courseId;
 				
 				$newcourse['Course_Code'] = "";

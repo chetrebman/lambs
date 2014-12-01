@@ -4,7 +4,14 @@ class Student extends CI_Controller {
 
 
 	public function index()
-	{		
+	{	
+			// 12-1-14  get all student status codes	
+		$query = $this->db->get('status');
+		foreach ($query->result() as $row)
+		{
+			$statusMap[ $row->id ] = $row->studentStatus;
+		}
+    			
 		$userdata = null;
 		if( ! logged_in( $this, $userdata, array('write', 'admin') ) )
 		{
@@ -31,12 +38,18 @@ class Student extends CI_Controller {
 				$newStudent['Zip'] = "";
 				$newStudent['Cell'] = "";
 				$newStudent['Tuition_Per_Hour'] = TUITION_PER_HOUR;
+					//12-1-14
+				$newStudent['Status'] = "1"; // 1 is actuve see table Status
+				
 				$data[ 'student' ] = $newStudent;
 			}
 			else {
 				$where[ 'id' ] = $studentId;
 				$query = $this->db->get_where( 'student', $where );
-				$data[ 'student' ] = $query->row_array();
+				
+					// 12-1-14
+				$data[ 'student' ] = $query->row_array(); 
+				$data[ 'statusMap' ] = $statusMap;
 			}
 			
 						

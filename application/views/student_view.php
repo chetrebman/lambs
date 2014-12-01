@@ -21,6 +21,7 @@ $this->load->helper('form');
    
 
     <?php    
+    
     	echo form_open( base_url().'index.php/student');
     	echo form_hidden('id', $student['id']);
     	echo "<table>";
@@ -39,7 +40,16 @@ $this->load->helper('form');
               'style'       => 'width:100%',
             );
     	
-    	echo "<td>".$key."</td><td>".form_input($data)."</td>";
+    			// added 12-1-14
+    		if( $key == 'Status' )
+    		{
+    			echo "<td>";
+    			echo form_dropdown('status', $statusMap, $student['Status'], 'id="studentStatus"'  ).'&nbsp;';
+    			echo "</td>";
+    		}
+    		else {
+    			echo "<td>".$key."</td><td>".form_input($data)."</td>";
+    		}
     		echo "</tr>";
     	} // foreach
     	echo "</table>";
