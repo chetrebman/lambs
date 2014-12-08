@@ -81,6 +81,8 @@ class Student extends CI_Controller {
 					
 			$query = $this->db->get('student');	
 			$data[ 'students' ] = $query;
+			$data[ 'statusMap' ] = $statusMap; 
+			$data[ 'statusSelect' ] = '1';
 			
 			// get all course codes ie AM, BP, AP etc
 			$query = $this->db->get('course');

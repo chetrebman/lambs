@@ -51,7 +51,9 @@ $(document).ready(setup_change);
 		
 		echo form_open( base_url().'index.php/daily_instructor_report', $attributes );	
       	echo form_dropdown('instructor', $instructors, $instructor, 'id="instructor"' ).'&nbsp;';
-		$sections = array('1'  => 'section one','2'  => 'section two', '3'  => 'section three', '4'  => 'section four', '5'  => 'section five' );
+		$sections = array('1'  => 'section one','2'  => 'section two', '3'  => 'section three', '4' => 'section four', '5' => 'section five', '6' => 'section six', '7' => 'section seven', '8' => 'section eight', 
+                           '9' => 'section nine', '10' => 'section ten', '11' => 'section eleven', '12' => 'section twelve', '13' => 'section thirteen', '14' => 'section fourteen', '15' => 'section fifteen',
+						   '16' => 'section sixteen', '17' => 'section seventeen', '18' => 'section eighteen', '19' => 'section nineteen', '20' => 'section twenty' );
       	echo form_dropdown('section', $sections, $section, 'id="section"'  ).'&nbsp;';
       	?>
 	
